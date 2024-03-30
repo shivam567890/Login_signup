@@ -1,38 +1,242 @@
-.App {
+/***********************Css for  Header**********************/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f5f5f5;
+}
+
+.header__left .link {
+  text-decoration: none;
+  color: #55aba9;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 1.5rem;
+
+}
+
+.user-icon {
+  font-size: 2rem;
+  color: #55aba9;
+  cursor: pointer;
+}
+
+.cart-icon{
+  font-size: 2rem;
+  color: #3b993e;
+  cursor: pointer;
+}
+/* Dropdown styles */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
   text-align: center;
+  /* display: none; */
+  margin-top: 25px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dropdown.open {
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.dropdown-content {
+  padding: 1rem;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dropdown-button {
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: #4caf50;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    background-color: #3b993e;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/********************** css for product page ***********************/
+
+.product-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.user-dashboard{
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+
+
+/*************** css for user cart *********************/
+
+.user-cart-checkout {
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.user-cart-checkout h2 {
+  margin-bottom: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(185, 183, 183);
+  margin-bottom: 1rem;
+}
+
+.cart-item img {
+  width: 100px;
+  height: auto;
+  margin-right: 1rem;
+  object-fit: cover; 
+}
+
+.cart-item-details {
+  flex: 1;
+}
+.remove-btn{
+  margin-right: 12px;
+}
+
+.cart-item-details h4 {
+  margin-bottom: 0.5rem;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.quantity-control label {
+  margin-right: 0.5rem;
+}
+
+.quantity-control input[type="number"] {
+  width: 50px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.cart-item button {
+  background-color: #f00; 
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  background-color: #d00; 
+}
+
+.cart-checkout-summary {
+  margin-top: 1rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+.cart-checkout-summary button {
+  background-color: #28b847; 
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-checkout-summary button:hover {
+  background-color: #28a547; 
+}
+
+
+/***************** css for payment element popup ***************/
+.checkout-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center; 
+  z-index: 10; 
 }
 
-.App-link {
-  color: #61dafb;
+.checkout-from {
+  background-color: #fff; 
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
 }
+
+
+/************** css for user order details ***********/
+.user-order {
+  border: 1px solid #ddd;
+  border-radius: 4px; /* Add subtle rounded corners */
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  /* Improved box-shadow for depth and subtle border highlighting */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.user-order h2 {
+  margin-top: 0; 
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.user-order p,
+.user-order ul {
+  margin-bottom: 0.5rem; 
+}
+
+.user-order ul {
+  list-style: none; 
+  padding-left: 1rem; 
+}
+
+.user-order li {
+  line-height: 1.5; 
+}
+
